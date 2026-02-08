@@ -19,8 +19,16 @@ class ball:
         self.hitbox.x = self.pos[0]
         self.hitbox.y = self.pos[1]
 
-    def collide(self,ball_2_velocity):
-        self.velocity += ball_2_velocity
+    def collide(self,ball2:ball):
+        n = self.pos - ball2.pos #calcuate the normal
+        dist = np.linalg.norm(n)
+        if dist == 0:
+            n = np.random.rand(2) * 0.01
+        n_unit = n/ dist
+        self.velocity = self.velocity - (np.dot((self.velocity - ball2.velocity),n_unit)*n_unit)
+        n_unit = n/ np.linalg.norm(n) # divide by its magnitude to get unit vecor
+
+
 
 
     def update_pos(self):

@@ -65,7 +65,7 @@ while running:
                 continue
             
             if entity.hitbox.colliderect(other.hitbox):
-                entity.collide(other.velocity)
+                entity.collide(other)
 
 
 
