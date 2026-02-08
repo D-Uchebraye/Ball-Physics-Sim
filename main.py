@@ -6,8 +6,8 @@ from balls import ball
 balls = []
 
 #game settings
-SCREEN_WIDTH = 1960
-SCREEN_HEIGHT = 1080
+SCREEN_WIDTH = 1000
+SCREEN_HEIGHT = 1000
 gravity = 10
 speed = 5
 hitboxes = []

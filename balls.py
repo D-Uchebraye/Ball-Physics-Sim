@@ -24,6 +24,7 @@ class ball:
         dist = np.linalg.norm(n)
         if dist == 0:
             n = np.random.rand(2) * 0.01
+            dist = np.linalg.norm(n)
         n_unit = n/ dist
         self.velocity = self.velocity - (np.dot((self.velocity - ball2.velocity),n_unit)*n_unit)
         n_unit = n/ np.linalg.norm(n) # divide by its magnitude to get unit vecor
